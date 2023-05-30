@@ -21,11 +21,22 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
+    
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.apk'
+    targetFolder: '$(build.artifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(build.artifactStagingDirectory)'
+    artifactName: 'drop'
+    artifactType: 'container'
 
 - task: ostorlab-azure-security-scanner@1
   inputs:
     apiKey: 'UBPpXVo5.ca9FnAWqTxaZXVgqEMySHUfIc3LNOvZw'
-    filepath: '/home/vsts/work/1/a/ostorlabArtifacts/app-debug.apk'
+    filepath: '/dev/myApp.apk'
     platform: 'android'
     artifactsDir: '$(build.artifactStagingDirectory)/ostorlabArtifacts'
     title: 'CI/CD Integration'
