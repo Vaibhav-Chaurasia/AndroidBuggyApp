@@ -22,7 +22,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
-    targetFolder: '$(build.artifactStagingDirectory)/ostorlabArtifacts'
+    targetFolder: '$(build.artifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
