@@ -1,4 +1,11 @@
 # Android
+- task: ostorlab-azure-security-scanner@1
+  inputs:
+    apiKey: 'UBPpXVo5.ca9FnAWqTxaZXVgqEMySHUfIc3LNOvZw'
+    filepath: '/AndroidBuggyApp.apk'
+    platform: 'android'
+    artifactsDir: '$(build.artifactStagingDirectory)/ostorlabArtifacts'
+    title: 'CI/CD Dev'
 # Build your Android project with Gradle.
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
