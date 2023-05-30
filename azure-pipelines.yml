@@ -25,7 +25,7 @@ steps:
 - task: ostorlab-azure-security-scanner@1
   inputs:
     apiKey: 'UBPpXVo5.ca9FnAWqTxaZXVgqEMySHUfIc3LNOvZw'
-    filepath: 'C:/Users/vchaurasia/Downloads/AndroidBuggyApp/app/build/intermediates/apk/debug/app-debug.apk'
+    filepath: '/app-debug.apk'
     platform: 'android'
     artifactsDir: '$(build.artifactStagingDirectory)/ostorlabArtifacts'
     title: 'CI/CD Integration'
