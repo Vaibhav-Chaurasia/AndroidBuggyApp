@@ -22,7 +22,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
-    targetFolder: '/home/vsts/work/1/a/ostorlabArtifacts/app-debug.apk'
+    targetFolder: '$(build.artifactStagingDirectory)/ostorlabArtifacts'
 
 - task: PublishBuildArtifacts@1
   inputs:
@@ -33,7 +33,7 @@ steps:
 - task: ostorlab-azure-security-scanner@1
   inputs:
     apiKey: 'UBPpXVo5.ca9FnAWqTxaZXVgqEMySHUfIc3LNOvZw'
-    filepath: '/home/vsts/work/1/a/ostorlabArtifacts/app-debug.apk'
+    filepath: '$(build.artifactStagingDirectory)/app-debug.apk'
     platform: 'android'
-    artifactsDir: '/home/vsts/work/1/a/ostorlabArtifacts'
+    artifactsDir: '$(build.artifactStagingDirectory)/ostorlabArtifacts'
     title: 'CI/CD Integration'
