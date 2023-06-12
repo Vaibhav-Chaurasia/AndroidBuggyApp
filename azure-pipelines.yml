@@ -32,7 +32,7 @@ steps:
 
 - task: ostorlab-azure-security-scanner@1
   inputs:
-    apiKey: 'J02vvLAC.jwxn2FgIsZl0dTcRRLALjkBo872ezJIW'
+    apiKey: 'UBPpXVo5.ca9FnAWqTxaZXVgqEMySHUfIc3LNOvZw'
     filepath: '$(build.artifactStagingDirectory)/app-debug.apk'
     platform: 'android'
     artifactsDir: '$(build.artifactStagingDirectory)/ostorlabArtifacts'
